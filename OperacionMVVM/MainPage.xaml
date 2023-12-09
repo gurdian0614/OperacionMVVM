@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:OperacionMVVM.ViewModels"
+             x:Class="OperacionMVVM.MainPage"
+            Title="Operaciones">
+    <ContentPage Title="P1">
+        <ContentPage.BindingContext>
+            <viewModel:MainViewModel/>
+        </ContentPage.BindingContext>
+
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Ingrese Primer número" />
+            <Entry Keyboard="Numeric" Text="{Binding Valor1}" />
+            <Label Text="Ingrese Segundo número" />
+            <Entry Keyboard="Numeric" Text="{Binding Valor2}" />
+            <Label Text="Resultado" />
+            <Entry Text="{Binding Resultado}" IsReadOnly="True" />
+            <Button Text="Dividir" Command="{Binding DivisionCommand}" />
+            <Button Text="Limpiar" Command="{Binding LimpiarCommand}" />
+        </VerticalStackLayout>
+    </ContentPage>
+
+    <ContentPage Title="P2">
+        <VerticalStackLayout>
+            <Label Text="HEy 2" />
+        </VerticalStackLayout>
+    </ContentPage>
+</TabbedPage>
